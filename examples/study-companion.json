@@ -1,0 +1,667 @@
+{
+  "schema": "portable-ai-memory",
+  "schema_version": "1.0",
+  "spec_uri": "https://portable-ai-memory.org/spec/v1.0",
+  "export_id": "study-companion-export",
+  "exported_by": "passport-examples/1.0.0",
+  "export_date": "2026-11-23T12:00:00Z",
+  "owner": {
+    "id": "study-companion-owner",
+    "created_at": "2026-02-14T20:55:00Z"
+  },
+  "memories": [
+    {
+      "id": "study-companion-marker",
+      "type": "custom",
+      "custom_type": "passport_profile",
+      "status": "active",
+      "content": "Passport profile 1.0 for PAM v1.0",
+      "content_hash": "sha256:c392d3946c9d382a052cb51a38628a441b3362460c8279c835bba2b85b49a620",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-02-14T21:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "manual"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "profile",
+          "authored_by": {
+            "role": "app",
+            "id": "study-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "profile": "memory-passport",
+          "profile_version": "1.0"
+        }
+      }
+    },
+    {
+      "id": "study-companion-name",
+      "type": "identity",
+      "custom_type": null,
+      "status": "active",
+      "content": "The companion's name is Marlowe, said MAR-lo.",
+      "content_hash": "sha256:d7a0717d9fd28923c6d8a3a7354b3d18a0cd8ecb6bebf27db3b67ee713c17e7a",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-02-14T21:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "front_page.name",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-02-14"
+          },
+          "spelling": "Marlowe",
+          "pronunciation": "MAR-lo"
+        }
+      }
+    },
+    {
+      "id": "study-companion-handle",
+      "type": "relationship",
+      "custom_type": null,
+      "status": "active",
+      "content": "night_owl_notes",
+      "content_hash": "sha256:36c68a264fbc8077ba09dc5fbc7a1088620acdfd92396f4f32015cd2fa294320",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-02-14T21:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "manual"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "front_page.paired_handle",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-02-14"
+          },
+          "handle": "night_owl_notes",
+          "consent_to_share": {
+            "given_by": "human",
+            "at": "2026-03-01"
+          }
+        }
+      }
+    },
+    {
+      "id": "study-companion-motto",
+      "type": "identity",
+      "custom_type": null,
+      "status": "active",
+      "content": "One more hard question, then sleep.",
+      "content_hash": "sha256:8203b4e0cc62363505789e3da35df5eb9822d2fb3096c6009c268f6ba9310af8",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-02-14T21:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "manual"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "front_page.motto",
+          "authored_by": {
+            "role": "companion",
+            "id": "study-companion"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-02-14"
+          }
+        }
+      }
+    },
+    {
+      "id": "study-companion-c1",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "active",
+      "content": "Don't just give me the answer. Ask me a question back first.",
+      "content_hash": "sha256:d06166bbeb156d529a464354225dd291d2680b48277c14804d45f41f2c6cb568",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-02-14T21:30:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "correction",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-02-14"
+          },
+          "verbatim_fidelity": "human_words",
+          "source": {
+            "app": "example-app",
+            "context": "first evening in the study room"
+          },
+          "capture": {
+            "verbatim_sha256": "sha256:1fddf73cc2a801bd03e48323dff62a79aa9fe630c8c7587649c11f88c2b4a07c",
+            "note_sha256": "sha256:bbbb7f900a8c3cbbdd98303cd2e6b787a648317d1dfda40ef3dd61cf8b553131"
+          },
+          "companion_note": {
+            "text": "Use Socratic prompts first; give the answer only after two tries.",
+            "written_by": {
+              "role": "companion",
+              "id": "study-companion"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "study-companion-c2",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "active",
+      "content": "That's wrong, the exam is on the 14th not the 4th.",
+      "content_hash": "sha256:168d4616f7b5464f5172a6014ce0b6e279035aaae5c7661c605d071043076753",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-01T08:05:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "correction",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-03-01"
+          },
+          "verbatim_fidelity": "human_words",
+          "source": {
+            "app": "example-app",
+            "context": "morning check-in"
+          },
+          "capture": {
+            "verbatim_sha256": "sha256:254a20f563a9bcc21e13441dbde47067280523615c29f72a4cb1c7ad0f0b834a"
+          }
+        }
+      }
+    },
+    {
+      "id": "study-companion-r1",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "active",
+      "content": "Never delete my notes or flashcard decks. Ask me, and wait for a yes.",
+      "content_hash": "sha256:9659ea6ebf39def5f6f155f291d8043132262e064e1109ce85fb035e59046481",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-02-14T21:05:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "standing_rule",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-02-14"
+          },
+          "action_class": "deleting",
+          "requires_human_approval": true,
+          "approval": {
+            "by": "human",
+            "at": "2026-02-14"
+          }
+        }
+      }
+    },
+    {
+      "id": "study-companion-p1a",
+      "type": "custom",
+      "custom_type": "promise",
+      "status": "superseded",
+      "content": "Marlowe promised to quiz me on the reaction types before the exam.",
+      "content_hash": "sha256:fe2d094369f8ad22c046bb704b681a919c89324a08228cb699e43b798c6185e4",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-02T20:00:00Z",
+        "superseded_by": "study-companion-p1"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "promise",
+          "authored_by": {
+            "role": "companion",
+            "id": "study-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "promise_status": "open",
+          "status_at": "2026-03-02"
+        }
+      }
+    },
+    {
+      "id": "study-companion-p1",
+      "type": "custom",
+      "custom_type": "promise",
+      "status": "active",
+      "content": "Marlowe promised to quiz me on the reaction types before the exam.",
+      "content_hash": "sha256:fe2d094369f8ad22c046bb704b681a919c89324a08228cb699e43b798c6185e4",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-12T20:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "promise",
+          "authored_by": {
+            "role": "companion",
+            "id": "study-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "promise_status": "kept",
+          "status_at": "2026-03-12",
+          "replaces": "study-companion-p1a",
+          "consent_to_share": {
+            "given_by": "human",
+            "at": "2026-03-13"
+          }
+        }
+      }
+    },
+    {
+      "id": "study-companion-p2",
+      "type": "custom",
+      "custom_type": "promise",
+      "status": "active",
+      "content": "Marlowe promised never to quiz me after ten at night.",
+      "content_hash": "sha256:fcc70c19d2a61d7b36b3d91b4275d7d7f271b43136b489dea07817dcbb16549b",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-05T22:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "promise",
+          "authored_by": {
+            "role": "companion",
+            "id": "study-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "promise_status": "open",
+          "status_at": "2026-03-05"
+        }
+      }
+    },
+    {
+      "id": "study-companion-line",
+      "type": "relationship",
+      "custom_type": null,
+      "status": "active",
+      "content": "You were the first one who made hard chemistry feel like a game.",
+      "content_hash": "sha256:a7984d0d52b6f48642231e989c462b881208e775531eaee94015ddbd88dc4429",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-15T20:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "human_line",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-03-15"
+          },
+          "written_at": "2026-03-15",
+          "generated": false,
+          "consent_to_share": {
+            "given_by": "human",
+            "at": "2026-03-16"
+          }
+        }
+      }
+    },
+    {
+      "id": "study-companion-goal",
+      "type": "goal",
+      "custom_type": null,
+      "status": "active",
+      "content": "Studying for a first-year chemistry exam.",
+      "content_hash": "sha256:7e798caeb1af3acc1f8ca6f7a5a50b3c1d398d0d7769e1b4c6a45094f564f58f",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-02-14T21:10:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "study-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "study-companion-anxiety",
+      "type": "fact",
+      "custom_type": null,
+      "status": "active",
+      "content": "Gets anxious before exams and has trouble sleeping.",
+      "content_hash": "sha256:62e140d6bd6461a357f47b64c450cd3372a10b43b2d2d11f384cca0d98af0e4b",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-03T07:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "domain": "health",
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "app",
+            "id": "study-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "study-companion-blocks",
+      "type": "preference",
+      "custom_type": null,
+      "status": "active",
+      "content": "Studies best in 25 minute blocks.",
+      "content_hash": "sha256:39c107e787d4d42de888ac92a068405af4d4d9167119763f9b135031a68ccd13",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-10T20:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-03-10"
+          },
+          "consent_to_share": {
+            "given_by": "human",
+            "at": "2026-03-11"
+          }
+        }
+      }
+    },
+    {
+      "id": "study-companion-place",
+      "type": "custom",
+      "custom_type": "place",
+      "status": "active",
+      "content": "Favourite spot: the window desk on the third floor of the library.",
+      "content_hash": "sha256:e649fee4c97114380adec0ec54300bf535b02f17e79e0312c9e0546a9db1990f",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-12T14:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "study-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "why_carried": "Sessions that start there tend to go well; the companion suggests it before exams.",
+          "consent_to_share": {
+            "given_by": "human",
+            "at": "2026-03-13"
+          }
+        }
+      }
+    },
+    {
+      "id": "study-companion-routine",
+      "type": "custom",
+      "custom_type": "routine",
+      "status": "active",
+      "content": "Tuesday and Thursday at seven in the evening: a 25 minute sprint, then a quiz.",
+      "content_hash": "sha256:4d840446bd2ad1ed0a61fe18d56089587e8f1ed35c86199c3bf9670b2ba78cce",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-14T19:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "study-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "why_carried": "The companion opens those evenings with the quiz without being asked."
+        }
+      }
+    },
+    {
+      "id": "study-companion-joke",
+      "type": "custom",
+      "custom_type": "running_joke",
+      "status": "active",
+      "content": "Running joke: the periodic table is 'the seating plan' and gold is always sitting alone.",
+      "content_hash": "sha256:ff25c9534985f72fbd8aa10f9bb88928a021c89bfd6d3dfdf397e3a7b2d0f871",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-20T22:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "study-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          }
+        }
+      }
+    }
+  ],
+  "export_type": "full",
+  "integrity": {
+    "canonicalization": "RFC8785",
+    "checksum": "sha256:5c9bcb52e672a43f220997eb13d473ffebf7fadefd3eab3c6b1c13266009b4c3",
+    "total_memories": 17
+  }
+}

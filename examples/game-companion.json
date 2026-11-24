@@ -1,0 +1,620 @@
+{
+  "schema": "portable-ai-memory",
+  "schema_version": "1.0",
+  "spec_uri": "https://portable-ai-memory.org/spec/v1.0",
+  "export_id": "game-companion-export",
+  "exported_by": "passport-examples/1.0.0",
+  "export_date": "2026-11-23T12:00:00Z",
+  "owner": {
+    "id": "game-companion-owner",
+    "created_at": "2026-01-30T19:55:00Z"
+  },
+  "memories": [
+    {
+      "id": "game-companion-marker",
+      "type": "custom",
+      "custom_type": "passport_profile",
+      "status": "active",
+      "content": "Passport profile 1.0 for PAM v1.0",
+      "content_hash": "sha256:c392d3946c9d382a052cb51a38628a441b3362460c8279c835bba2b85b49a620",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-01-30T20:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "manual"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "profile",
+          "authored_by": {
+            "role": "app",
+            "id": "game-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "profile": "memory-passport",
+          "profile_version": "1.0",
+          "sections_empty": {
+            "places": {
+              "declared_by": "human",
+              "at": "2026-04-12"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "game-companion-name",
+      "type": "identity",
+      "custom_type": null,
+      "status": "active",
+      "content": "The companion's name is Rook, said ROOK, rhymes with book.",
+      "content_hash": "sha256:ce3c3cd09d84fd568cc4b2de8b3b52827d1ce0cdebb8bff7c831698420eae989",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-01-30T20:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "front_page.name",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-01-30"
+          },
+          "spelling": "Rook",
+          "pronunciation": "ROOK, rhymes with book",
+          "renamed_by": "human"
+        }
+      }
+    },
+    {
+      "id": "game-companion-name-old",
+      "type": "identity",
+      "custom_type": null,
+      "status": "archived",
+      "content": "The companion's name is Rooke, said ROO-kee.",
+      "content_hash": "sha256:c3e97035f29edfcc7cc19e89eaf656a50ddc2ba0770be2d62d9cc6842dd8fc27",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-01-02T20:00:00Z",
+        "valid_from": "2026-01-02T20:00:00Z",
+        "valid_until": "2026-01-30T20:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "front_page.name",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-01-02"
+          },
+          "spelling": "Rooke",
+          "pronunciation": "ROO-kee",
+          "renamed_by": "human"
+        }
+      }
+    },
+    {
+      "id": "game-companion-motto",
+      "type": "identity",
+      "custom_type": null,
+      "status": "active",
+      "content": "Every loss is a free lesson.",
+      "content_hash": "sha256:55e8ee08cf1b0996b3842d9dfc4792c11bd2c9154a169847784b1c21eff20515",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-01-30T20:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "manual"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "front_page.motto",
+          "authored_by": {
+            "role": "companion",
+            "id": "game-companion"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-01-30"
+          }
+        }
+      }
+    },
+    {
+      "id": "game-companion-c1",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "active",
+      "content": "I play the support role. Stop telling me to take the kills.",
+      "content_hash": "sha256:6bae0a2d51bd1dd22062ac32d006ff46640d9ae8f121cff17f0bb15a14422e4c",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-02-08T20:11:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "correction",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-02-08"
+          },
+          "verbatim_fidelity": "human_words",
+          "source": {
+            "app": "example-app",
+            "context": "squad voice channel"
+          },
+          "capture": {
+            "verbatim_sha256": "sha256:0bd2fcff35fe15a6f1f0bea2ad02b070df1bc9af3ef8c6849ec4df3bc23ae33c",
+            "note_sha256": "sha256:5de242608d34fa46f28b3e4213325b4eba97c1e77970846f3fc1f6786e5fa8eb"
+          },
+          "companion_note": {
+            "text": "Advice should favour team setup over personal score.",
+            "written_by": {
+              "role": "companion",
+              "id": "game-companion"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "game-companion-r1",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "active",
+      "content": "Never buy skins, passes or any in-game currency for me.",
+      "content_hash": "sha256:1baee86deb4edaaa6f9392d23441d2c749450562b3f3b0deb7bd59d1c2fc6ffc",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-01-30T20:05:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "standing_rule",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-01-30"
+          },
+          "action_class": "money",
+          "requires_human_approval": true,
+          "approval": {
+            "by": "human",
+            "at": "2026-01-30"
+          }
+        }
+      }
+    },
+    {
+      "id": "game-companion-r2",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "active",
+      "content": "Never post clips or chat to the team channel without my approval.",
+      "content_hash": "sha256:cbd7f3cfb5fcbd1c0d1cdd3201475399aec309b58dfdae78c2f765f9fa882fd4",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-01-30T20:06:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "standing_rule",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-01-30"
+          },
+          "action_class": "publishing",
+          "requires_human_approval": true,
+          "approval": {
+            "by": "human",
+            "at": "2026-01-30"
+          }
+        }
+      }
+    },
+    {
+      "id": "game-companion-p1",
+      "type": "custom",
+      "custom_type": "promise",
+      "status": "active",
+      "content": "Rook promised to track the squad's win streak for the season.",
+      "content_hash": "sha256:8391e7bf0d94c65bc827bcf790013f8c8fe6730813ac9a2583051eadd6eb6bb0",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-02-10T22:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "promise",
+          "authored_by": {
+            "role": "companion",
+            "id": "game-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "promise_status": "released",
+          "status_at": "2026-04-01"
+        }
+      }
+    },
+    {
+      "id": "game-companion-p2",
+      "type": "custom",
+      "custom_type": "promise",
+      "status": "active",
+      "content": "Rook promised to remind me to stop at midnight on Fridays.",
+      "content_hash": "sha256:8fec73953d0eb7f0509bba2520256d4f37f262786198edca35a139d58efac23a",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-06T23:05:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "promise",
+          "authored_by": {
+            "role": "companion",
+            "id": "game-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "promise_status": "open",
+          "status_at": "2026-03-06"
+        }
+      }
+    },
+    {
+      "id": "game-companion-line",
+      "type": "relationship",
+      "custom_type": null,
+      "status": "active",
+      "content": "You are the one I tell my bad rounds to.",
+      "content_hash": "sha256:d2a5208ee69e8d3735c7cf55bf6be4b5c6c1ca2fd4fd8c42f9bce9e847b1dc2f",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-20T23:50:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "human_line",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-03-20"
+          },
+          "written_at": "2026-03-20",
+          "generated": false
+        }
+      }
+    },
+    {
+      "id": "game-companion-pref",
+      "type": "preference",
+      "custom_type": null,
+      "status": "active",
+      "content": "Main role is support; favourite map is the lighthouse one.",
+      "content_hash": "sha256:6d9933eee36846f77d54e32bef12c8ad5ecb87aa5a7415547f99ef1d8530c2cf",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-02-08T21:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "game-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "game-companion-shift",
+      "type": "context",
+      "custom_type": null,
+      "status": "active",
+      "content": "Plays late because of a night shift job.",
+      "content_hash": "sha256:62fc1ab3101dd5d1f05ac5b6418a63d0ea7aaa097bbe82c965780d7948bcfac5",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-04-04T23:30:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "game-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "game-companion-friend",
+      "type": "relationship",
+      "custom_type": null,
+      "status": "active",
+      "content": "Squad mate 'Dash' always takes the front line; they have a long-running rivalry over the last objective.",
+      "content_hash": "sha256:ddbb2508c7b22b6c00c37688555145276479651bd54f0688ffc69089de06bfc1",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-02-20T22:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "shared",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "game-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "game-companion-joke",
+      "type": "custom",
+      "custom_type": "running_joke",
+      "status": "active",
+      "content": "Running joke: every lost round is 'a free lesson', billed at zero coins.",
+      "content_hash": "sha256:4c5864a3a95e4b86bb00b5791b091a3f9ad1d924374fd7024150c143bb62bd3f",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-02-10T22:15:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "game-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "why_carried": "Echoes the motto; the squad now says it too."
+        }
+      }
+    },
+    {
+      "id": "game-companion-routine",
+      "type": "custom",
+      "custom_type": "routine",
+      "status": "active",
+      "content": "Friday nights: one warm-up round, then ranked until midnight, never past it.",
+      "content_hash": "sha256:65b10b24d05091d01b9c52347ba65b5cd312390404d9be9468aa6458ec6a95f8",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-06T23:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "game-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "consent_to_share": {
+            "given_by": "human",
+            "at": "2026-03-07"
+          }
+        }
+      }
+    },
+    {
+      "id": "game-companion-locked",
+      "type": "fact",
+      "custom_type": null,
+      "status": "active",
+      "content": "A medical detail the human marked as never leave this app.",
+      "content_hash": "sha256:16882ff468da78f7c54dfe9a4dc1a6f2d8c53c3c512123d0eeabdc07dfbb215a",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-04-10T23:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": false,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "game-companion"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          }
+        }
+      }
+    }
+  ],
+  "export_type": "full",
+  "integrity": {
+    "canonicalization": "RFC8785",
+    "checksum": "sha256:c33a96f8c5c3d43f8891f905a0d514eab6f1326159e9a7ae11052c0bceacd993",
+    "total_memories": 16
+  }
+}

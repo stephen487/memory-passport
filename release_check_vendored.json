@@ -1,0 +1,8 @@
+[
+  {
+    "path": "spec/pam/portable-ai-memory.schema.json",
+    "sha256": "8d1273c4a55f472128a11c4713af7ef1cd474e2f780001d5b96870c8c38d3b9e",
+    "source_url": "https://github.com/portable-ai-memory/portable-ai-memory (branch master, commit d634ce85f2ecce9678d93b2f664e85d6ecc3a66a)",
+    "licence": "Apache-2.0 (copyright 2026 Daniel Gines)"
+  }
+]

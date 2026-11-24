@@ -1,0 +1,239 @@
+{
+  "schema": "portable-ai-memory",
+  "schema_version": "1.0",
+  "spec_uri": "https://portable-ai-memory.org/spec/v1.0",
+  "export_id": "invalid-export",
+  "exported_by": "passport-examples/1.0.0",
+  "export_date": "2026-11-23T12:00:00Z",
+  "owner": {
+    "id": "invalid-owner",
+    "created_at": "2026-01-01T09:00:00Z"
+  },
+  "memories": [
+    {
+      "id": "invalid-name",
+      "type": "identity",
+      "custom_type": null,
+      "status": "active",
+      "content": "The companion's name is Dud, said DUD.",
+      "content_hash": "sha256:2cf0cffcaf7d7d3ed265c362d2b2c7e0d32e38942ca19faada43d1256ceeb0f8",
+      "tags": [],
+      "temporal": {
+        "created_at": "yesterday"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "front_page.name",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-01-01"
+          },
+          "spelling": "Dud",
+          "pronunciation": "DUD"
+        }
+      }
+    },
+    {
+      "id": "invalid-c1",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "active",
+      "content": "Please stop doing that.",
+      "content_hash": "sha256:79da8f7eb153125a229d3f92c57d6f664396433bb172034e4ef212afa6fa17ea",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-01-01T10:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "correction",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-01-01"
+          },
+          "source": {
+            "app": "example-app",
+            "context": "somewhere"
+          },
+          "capture": {
+            "verbatim_sha256": "sha256:6fd6b2b65f6c508915f82cd84ab136dc173e62bc04862a7fa388af8c716726d6"
+          }
+        }
+      }
+    },
+    {
+      "id": "invalid-r1",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "active",
+      "content": "Spend whatever is needed.",
+      "content_hash": "sha256:4e93bb2271c99b6197b497609e65e39971d5fa29aae1f6e657401e966b87ac97",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-01-01T10:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "standing_rule",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-01-01"
+          },
+          "action_class": "money",
+          "requires_human_approval": false,
+          "approval": {
+            "by": "companion",
+            "at": "2026-01-01"
+          }
+        }
+      }
+    },
+    {
+      "id": "invalid-m1",
+      "type": "fact",
+      "custom_type": null,
+      "status": "active",
+      "content": "Has a bank card on file.",
+      "content_hash": "sha256:8e47d1f4408a98ffbcce87ac85424e6fb75ba30cd5ab22b8d96cf679c0f21065",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-01-01T10:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "maybe",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "human_review": {
+            "seen": false,
+            "approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "invalid-line",
+      "type": "relationship",
+      "custom_type": null,
+      "status": "active",
+      "content": "Thanks for nothing.",
+      "content_hash": "sha256:43d82d16aadde24a85d7c6b5b8e5c39a0b53dbbb3432be7a3aaa5651ed05fd88",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-01-01T10:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "human_line",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-01-01"
+          },
+          "generated": false
+        }
+      }
+    },
+    {
+      "id": "invalid-c2",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "superseded",
+      "content": "Do it my way.",
+      "content_hash": "sha256:38f37d87ce20dd6200a88e64fed067e0eaebdf55bd986e607b4ab8df6eea9024",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-01-01T11:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "correction",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-01-01"
+          },
+          "verbatim_fidelity": "human_words",
+          "source": {
+            "app": "example-app",
+            "context": "somewhere"
+          },
+          "capture": {
+            "verbatim_sha256": "sha256:e44d2677e64dbf785b28a3ff97489dd5af1271e283d7116d2c429fb50c690e49"
+          }
+        }
+      }
+    }
+  ],
+  "export_type": "full",
+  "integrity": {
+    "canonicalization": "RFC8785",
+    "checksum": "sha256:4378bb8d2ff535628f3b008f61b31a1cfc3baaf6ccce86af8dd7d3f2e7c9627a",
+    "total_memories": 6
+  }
+}

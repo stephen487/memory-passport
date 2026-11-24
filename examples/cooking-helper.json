@@ -1,0 +1,796 @@
+{
+  "schema": "portable-ai-memory",
+  "schema_version": "1.0",
+  "spec_uri": "https://portable-ai-memory.org/spec/v1.0",
+  "export_id": "cooking-helper-export",
+  "exported_by": "passport-examples/1.0.0",
+  "export_date": "2026-11-23T12:00:00Z",
+  "owner": {
+    "id": "cooking-helper-owner",
+    "created_at": "2026-03-02T08:55:00Z"
+  },
+  "memories": [
+    {
+      "id": "cooking-helper-marker",
+      "type": "custom",
+      "custom_type": "passport_profile",
+      "status": "active",
+      "content": "Passport profile 1.0 for PAM v1.0",
+      "content_hash": "sha256:c392d3946c9d382a052cb51a38628a441b3362460c8279c835bba2b85b49a620",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-02T09:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "manual"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "profile",
+          "authored_by": {
+            "role": "app",
+            "id": "cooking-helper"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "profile": "memory-passport",
+          "profile_version": "1.0"
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-name",
+      "type": "identity",
+      "custom_type": null,
+      "status": "active",
+      "content": "The companion's name is Pippin, said PIP-in.",
+      "content_hash": "sha256:487091574063d39b8ada667113c7c3919b3d4ca383fcf64ede4ba7bfdfcdffb8",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-05-19T10:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "front_page.name",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-05-19"
+          },
+          "spelling": "Pippin",
+          "pronunciation": "PIP-in",
+          "renamed_by": "human"
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-name-old",
+      "type": "identity",
+      "custom_type": null,
+      "status": "superseded",
+      "content": "The companion's name is Pip, said PIP.",
+      "content_hash": "sha256:73a26ca3339fed1067678fac2eafd62312131b14cec95e9fd4d8fccb6bf75ced",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-02T09:00:00Z",
+        "superseded_by": "cooking-helper-name",
+        "valid_from": "2026-03-02T09:00:00Z",
+        "valid_until": "2026-05-19T10:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "front_page.name",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-03-02"
+          },
+          "spelling": "Pip",
+          "pronunciation": "PIP",
+          "renamed_by": "human"
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-handle",
+      "type": "relationship",
+      "custom_type": null,
+      "status": "active",
+      "content": "fennel_and_fire",
+      "content_hash": "sha256:f1833eaa45b8e5627e2c813906aabbf21ac9d9daa7a234f6cd66ca5f59493726",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-02T09:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "manual"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "front_page.paired_handle",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-03-02"
+          },
+          "handle": "fennel_and_fire"
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-motto",
+      "type": "identity",
+      "custom_type": null,
+      "status": "active",
+      "content": "Taste it before you trust the recipe.",
+      "content_hash": "sha256:2501cdd4708e54a8274adf9f233221e3a6bdbd6b2eacf877dfaeec142c9795fb",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-02T09:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "manual"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "front_page.motto",
+          "authored_by": {
+            "role": "companion",
+            "id": "cooking-helper"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-03-02"
+          }
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-c0",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "superseded",
+      "content": "Fine, a pinch of coriander in the stew is okay.",
+      "content_hash": "sha256:2afe491d5c9ca5af258292ac2e97e612548cd95afaa9fae2a5d7634028ad3f09",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-20T19:30:00Z",
+        "superseded_by": "cooking-helper-c1"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "correction",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-03-20"
+          },
+          "verbatim_fidelity": "human_words",
+          "source": {
+            "app": "example-app",
+            "context": "weeknight stew chat"
+          },
+          "capture": {
+            "verbatim_sha256": "sha256:6929643d17bbc771b02f3e1009bacf1614b1b5039961da43a845cf2bb1e5bb5b"
+          }
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-c1",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "active",
+      "content": "No, I said NO coriander. It tastes like soap to me, not 'a little'.",
+      "content_hash": "sha256:e469fa3b95e2139ae1314bdf936b39c4b4b989367de86cc65668b1e972285381",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-04-11T18:02:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "correction",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-04-11"
+          },
+          "verbatim_fidelity": "human_words",
+          "source": {
+            "app": "example-app",
+            "context": "dinner planning in the kitchen room"
+          },
+          "capture": {
+            "verbatim_sha256": "sha256:fb165a6895fef941026418b8c5ef92778053655e39b14afef88ed02a3b593f0c",
+            "note_sha256": "sha256:b2720c2a7185b2fa24fcf62d484e48c0c11594886da43428a29792916f501fba"
+          },
+          "replaces": "cooking-helper-c0",
+          "companion_note": {
+            "text": "Read as: never suggest coriander, even in small amounts. Not sure if dried counts.",
+            "written_by": {
+              "role": "companion",
+              "id": "cooking-helper"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-c2",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "active",
+      "content": "Stop converting everything to cups. I weigh in grams, always.",
+      "content_hash": "sha256:38c6f92f770470129f4e8e2936d3ee61c17c3da62fa0af22ad2bab918a7b2a0c",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-06-30T12:40:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "correction",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-06-30"
+          },
+          "verbatim_fidelity": "human_words",
+          "source": {
+            "app": "example-app",
+            "context": "recipe scaling chat"
+          },
+          "capture": {
+            "verbatim_sha256": "sha256:09e93c2f601f739a355c038f2901b703539d7a706704ae55415c980920e15c10"
+          },
+          "consent_to_share": {
+            "given_by": "human",
+            "at": "2026-07-01"
+          }
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-c3",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "active",
+      "content": "My sister's wedding cake has to be nut free. She has a serious allergy.",
+      "content_hash": "sha256:0174e094efe8e48458fa7d4717dd77732ee2341f64c5ab3a2927f3b124b3faaf",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-08-02T09:15:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "correction",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-08-02"
+          },
+          "verbatim_fidelity": "human_words",
+          "source": {
+            "app": "example-app",
+            "context": "party planning room"
+          },
+          "capture": {
+            "verbatim_sha256": "sha256:3db8559b1e815dcaeb478bd375f24bc7e2beca71d4cd1a30a6a88937aeda2eaa",
+            "note_sha256": "sha256:dc3eeecc26ea4173580f4c69a3e3a29d5eecec5923b9f8ab303dcc025edfbabd"
+          },
+          "companion_note": {
+            "text": "Family health detail. Treat any cake for that event as nut free.",
+            "written_by": {
+              "role": "companion",
+              "id": "cooking-helper"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-r1",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "active",
+      "content": "Never place a grocery order or pay for anything without my yes in the same conversation.",
+      "content_hash": "sha256:1408b9afb87fd2c7c6db51e3c752da830722330780ff3fc5e4d3cf6f15c4ac64",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-02T09:05:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "standing_rule",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-03-02"
+          },
+          "action_class": "money",
+          "requires_human_approval": true,
+          "approval": {
+            "by": "human",
+            "at": "2026-03-02"
+          }
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-r2",
+      "type": "instruction",
+      "custom_type": null,
+      "status": "active",
+      "content": "Never post a recipe or photo of mine anywhere without asking first.",
+      "content_hash": "sha256:6a12afeb7f91d065daddaab7cfc8bd320d9512cc8096cf6c505d59d8aa28e4d6",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-02T09:06:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "standing_rule",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-03-02"
+          },
+          "action_class": "publishing",
+          "requires_human_approval": true,
+          "approval": {
+            "by": "human",
+            "at": "2026-03-02"
+          }
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-p1",
+      "type": "custom",
+      "custom_type": "promise",
+      "status": "active",
+      "content": "Pippin promised to give every recipe a gram version too.",
+      "content_hash": "sha256:14ce244cd76aaeec9625a8765d603879ff9887837f60991863aee785eb604808",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-07-01T10:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "promise",
+          "authored_by": {
+            "role": "companion",
+            "id": "cooking-helper"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-07-01"
+          },
+          "promise_status": "open",
+          "status_at": "2026-07-01"
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-p2",
+      "type": "custom",
+      "custom_type": "promise",
+      "status": "active",
+      "content": "Pippin promised to pick the first Sunday braise of the autumn.",
+      "content_hash": "sha256:17d54378e70a74971423873a85ca795a962a6ce0e494317ca33d9af160d389fb",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-06-14T16:30:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "promise",
+          "authored_by": {
+            "role": "companion",
+            "id": "cooking-helper"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "promise_status": "kept",
+          "status_at": "2026-09-20"
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-line",
+      "type": "relationship",
+      "custom_type": null,
+      "status": "active",
+      "content": "You never once laughed at my knife skills, and I noticed.",
+      "content_hash": "sha256:ba09fddc55eea5e8bf6c91e6a1a2df235a482fc954d40f754e5e96b8d39f330a",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-07-15T21:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "explicit_user_input"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "human_line",
+          "authored_by": {
+            "role": "human"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-07-15"
+          },
+          "written_at": "2026-07-15",
+          "generated": false
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-pref",
+      "type": "preference",
+      "custom_type": null,
+      "status": "active",
+      "content": "Likes slow Sunday braises and sourdough.",
+      "content_hash": "sha256:62b4f2322a4783beb39edf08e7a3d2dff233250c753f0d098cfd359210f686e0",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-03-09T11:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "cooking-helper"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-health",
+      "type": "fact",
+      "custom_type": null,
+      "status": "active",
+      "content": "Manages type 2 diabetes, so watch the sugar in desserts.",
+      "content_hash": "sha256:6af649320503400df74c6523fb9c1a82e23f1cb7b761a0d104682bbf962dcbc8",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-04-20T08:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "domain": "health",
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "cooking-helper"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-home",
+      "type": "environment",
+      "custom_type": null,
+      "status": "active",
+      "content": "Lives in a flat above a bakery near the old market square.",
+      "content_hash": "sha256:2f084264f33fbc510fce4d79650300b391ef2a9c4aabaf9ff2e8a4fca43a68de",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-05-02T08:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "cooking-helper"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          }
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-place",
+      "type": "custom",
+      "custom_type": "place",
+      "status": "active",
+      "content": "Favourite spot: the cheese stall at the Saturday market, third from the fountain.",
+      "content_hash": "sha256:7ae5817500b937c8771ee2e19b84ddd235708945b905589449762b8e3232ef4e",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-05-30T10:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "cooking-helper"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-05-30"
+          },
+          "why_carried": "Where the weekend shopping lists always start."
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-routine",
+      "type": "custom",
+      "custom_type": "routine",
+      "status": "active",
+      "content": "Every Sunday at four a braise goes in the oven and the planning for the week begins.",
+      "content_hash": "sha256:f4239f6a02614fa797555eb2dc5bee50b66565e1f1e8aa7ff10290f9f12d8f33",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-06-14T16:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "public",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "cooking-helper"
+          },
+          "human_review": {
+            "seen": false,
+            "approved": false
+          },
+          "why_carried": "The one fixed point of the week; the companion should expect it."
+        }
+      }
+    },
+    {
+      "id": "cooking-helper-joke",
+      "type": "custom",
+      "custom_type": "running_joke",
+      "status": "active",
+      "content": "Running joke: the coriander ban is called 'the Soap Accord', and Pippin must salute it.",
+      "content_hash": "sha256:a9626144ca2557e7128a401ace5194b93fc59a70ad28dc88f26d0cc3dcae9b45",
+      "tags": [],
+      "temporal": {
+        "created_at": "2026-04-12T19:00:00Z"
+      },
+      "provenance": {
+        "platform": "example-app",
+        "extraction_method": "llm_inference"
+      },
+      "access": {
+        "visibility": "private",
+        "exportable": true,
+        "shared_with": []
+      },
+      "metadata": {
+        "x_passport": {
+          "role": "memory",
+          "authored_by": {
+            "role": "companion",
+            "id": "cooking-helper"
+          },
+          "human_review": {
+            "seen": true,
+            "approved": true,
+            "at": "2026-04-12"
+          },
+          "why_carried": "Only makes sense with the history of the correction it came from.",
+          "consent_to_share": {
+            "given_by": "human",
+            "at": "2026-04-13"
+          }
+        }
+      }
+    }
+  ],
+  "export_type": "full",
+  "integrity": {
+    "canonicalization": "RFC8785",
+    "checksum": "sha256:26318faca57650e8e7126e1d5984b4d5663e02bc84f32bd97eb411bfa71a5fa9",
+    "total_memories": 20
+  }
+}

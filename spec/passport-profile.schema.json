@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:memory-passport-profile:1.0",
+  "title": "Passport profile 1.0 for PAM v1.0",
+  "description": "A Passport is a valid PAM v1.0 memory-store document (https://github.com/portable-ai-memory/portable-ai-memory) whose memories follow this profile. The profile adds NO root fields (PAM forbids them). It lives in two places PAM leaves open: `type: custom` with a `custom_type`, and a namespaced `metadata.x_passport` block. The root of this file composes PAM's schema with the overlay below; a tool that only wants the profile part validates against `#/$defs/ProfileOverlay`. Cross-memory rules (one marker, one current name, hash and integrity checks) are in base/mechanism.py and spec/SPEC.md.",
+  "allOf": [
+    {"$ref": "https://schemas.portable-ai-memory.org/v1.0/memory-store.schema.json"},
+    {"$ref": "#/$defs/ProfileOverlay"}
+  ],
+  "$defs": {
+    "ProfileOverlay": {
+      "type": "object",
+      "properties": {
+        "memories": {"type": "array", "items": {"$ref": "#/$defs/ProfileMemory"}}
+      }
+    },
+    "ProfileMemory": {
+      "description": "Every memory in a Passport states access.visibility out loud (R4) and carries a metadata.x_passport block with its author and whether the human has seen it (R15). PAM would default a missing visibility to private; the profile refuses to guess.",
+      "type": "object",
+      "required": ["access", "metadata"],
+      "properties": {
+        "access": {"type": "object", "required": ["visibility"]},
+        "metadata": {
+          "type": "object",
+          "required": ["x_passport"],
+          "properties": {"x_passport": {"$ref": "#/$defs/PassportBlock"}}
+        }
+      },
+      "allOf": [
+        {"if": {"required": ["metadata"], "properties": {"metadata": {"required": ["x_passport"], "properties": {"x_passport": {"required": ["role"], "properties": {"role": {"const": "profile"}}}}}}},
+         "then": {"properties": {"type": {"const": "custom"}, "custom_type": {"const": "passport_profile"}}}},
+        {"if": {"required": ["metadata"], "properties": {"metadata": {"required": ["x_passport"], "properties": {"x_passport": {"required": ["role"], "properties": {"role": {"const": "front_page.name"}}}}}}},
+         "then": {"properties": {"type": {"const": "identity"}}}},
+        {"if": {"required": ["metadata"], "properties": {"metadata": {"required": ["x_passport"], "properties": {"x_passport": {"required": ["role"], "properties": {"role": {"const": "front_page.motto"}}}}}}},
+         "then": {"properties": {"type": {"const": "identity"}}}},
+        {"if": {"required": ["metadata"], "properties": {"metadata": {"required": ["x_passport"], "properties": {"x_passport": {"required": ["role"], "properties": {"role": {"const": "front_page.paired_handle"}}}}}}},
+         "then": {"properties": {"type": {"const": "relationship"}}}},
+        {"if": {"required": ["metadata"], "properties": {"metadata": {"required": ["x_passport"], "properties": {"x_passport": {"required": ["role"], "properties": {"role": {"const": "correction"}}}}}}},
+         "then": {"required": ["status", "temporal"],
+                  "properties": {"type": {"const": "instruction"},
+                                 "status": {"enum": ["active", "superseded"]},
+                                 "temporal": {"required": ["created_at"]}}}},
+        {"if": {"required": ["metadata"], "properties": {"metadata": {"required": ["x_passport"], "properties": {"x_passport": {"required": ["role"], "properties": {"role": {"const": "promise"}}}}}}},
+         "then": {"properties": {"type": {"const": "custom"}, "custom_type": {"const": "promise"}}}},
+        {"if": {"required": ["metadata"], "properties": {"metadata": {"required": ["x_passport"], "properties": {"x_passport": {"required": ["role"], "properties": {"role": {"const": "human_line"}}}}}}},
+         "then": {"properties": {"type": {"const": "relationship"}}}},
+        {"if": {"required": ["metadata"], "properties": {"metadata": {"required": ["x_passport"], "properties": {"x_passport": {"required": ["role"], "properties": {"role": {"const": "standing_rule"}}}}}}},
+         "then": {"properties": {"type": {"const": "instruction"}}}}
+      ]
+    },
+    "PassportBlock": {
+      "description": "metadata.x_passport. Every memory has one. Unknown keys are allowed and travel with the memory untouched (R16).",
+      "type": "object",
+      "required": ["role", "authored_by", "human_review"],
+      "properties": {
+        "role": {"type": "string", "description": "A role of this profile, or an extension role that starts with x_ (carried sealed, R16).", "pattern": "^(profile|front_page[.]name|front_page[.]paired_handle|front_page[.]motto|correction|standing_rule|promise|human_line|memory|x_[a-z0-9_]+)$"},
+        "authored_by": {"$ref": "#/$defs/Author"},
+        "human_review": {"$ref": "#/$defs/HumanReview"},
+        "written_at": {"type": "string", "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])"},
+        "replaces": {"type": "string", "minLength": 1},
+        "history_withheld": {"const": true},
+        "sections_withheld": {"type": "array", "uniqueItems": true, "items": {"type": "string", "enum": ["corrections", "promises", "standing_rules", "human_line", "places", "routines", "running_jokes"]}},
+        "sections_empty": {"type": "object", "additionalProperties": false, "properties": {"corrections": {"$ref": "#/$defs/EmptyByHuman"}, "promises": {"$ref": "#/$defs/EmptyByHuman"}, "standing_rules": {"$ref": "#/$defs/EmptyByHuman"}, "human_line": {"$ref": "#/$defs/EmptyByHuman"}, "places": {"$ref": "#/$defs/EmptyByHuman"}, "routines": {"$ref": "#/$defs/EmptyByHuman"}, "running_jokes": {"$ref": "#/$defs/EmptyByHuman"}}},
+        "consent_to_share": {"$ref": "#/$defs/Consent"},
+        "why_carried": {"type": "string", "minLength": 1, "maxLength": 200},
+        "profile": {"const": "memory-passport"},
+        "profile_version": {"type": "string", "pattern": "^1[.][0-9]+$"},
+        "shared_copy": {"$ref": "#/$defs/SharedCopy"},
+        "spelling": {"type": "string", "minLength": 1},
+        "pronunciation": {"type": "string", "minLength": 1},
+        "renamed_by": {"type": "string", "enum": ["human", "companion", "app"]},
+        "handle": {"type": "string", "minLength": 1},
+        "verbatim_fidelity": {"type": "string", "enum": ["human_words", "app_stored_text"]},
+        "companion_note": {"$ref": "#/$defs/CompanionNote"},
+        "action_class": {"type": "string", "enum": ["money", "publishing", "deleting", "other_irreversible"]},
+        "requires_human_approval": {"type": "boolean"},
+        "approval": {"$ref": "#/$defs/Approval"},
+        "source": {"$ref": "#/$defs/Source"},
+        "capture": {"$ref": "#/$defs/Capture"},
+        "promise_status": {"type": "string", "enum": ["open", "kept", "released"]},
+        "status_at": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}"},
+        "made_by": {"type": "string", "enum": ["human", "companion"]},
+        "generated": {"const": false}
+      },
+      "allOf": [
+        {"if": {"required": ["role"], "properties": {"role": {"const": "profile"}}},
+         "then": {"required": ["profile", "profile_version"]}},
+        {"if": {"required": ["role"], "properties": {"role": {"const": "front_page.name"}}},
+         "then": {"required": ["spelling", "pronunciation"]}},
+        {"if": {"required": ["role"], "properties": {"role": {"const": "front_page.paired_handle"}}},
+         "then": {"required": ["handle"]}},
+        {"if": {"required": ["role"], "properties": {"role": {"const": "correction"}}},
+         "then": {"required": ["verbatim_fidelity", "source", "capture"]}},
+        {"if": {"required": ["role"], "properties": {"role": {"const": "promise"}}},
+         "then": {"required": ["promise_status", "status_at"]}},
+        {"if": {"required": ["role"], "properties": {"role": {"const": "human_line"}}},
+         "then": {"required": ["authored_by", "generated", "written_at"], "properties": {"authored_by": {"$ref": "#/$defs/HumanAuthor"}}}},
+        {"if": {"required": ["role"], "properties": {"role": {"const": "standing_rule"}}},
+         "then": {"required": ["action_class", "requires_human_approval", "approval"],
+                  "properties": {"requires_human_approval": {"const": true}}}}
+      ]
+    },
+    "Consent": {
+      "description": "R4: the human's say-so for ONE memory. `given_by` must be human.",
+      "type": "object",
+      "required": ["given_by", "at"],
+      "properties": {
+        "given_by": {"const": "human"},
+        "at": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}"}
+      }
+    },
+    "Approval": {
+      "description": "R3: who approved a standing rule. Only a human can.",
+      "type": "object",
+      "required": ["by", "at"],
+      "properties": {
+        "by": {"const": "human"},
+        "at": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}"}
+      }
+    },
+    "Source": {
+      "description": "R8: where the correction was said, as the human would name it: the app and the room or context. Both are required, so an old correction is never quietly detached from where it came from.",
+      "type": "object",
+      "required": ["app", "context"],
+      "properties": {
+        "app": {"type": "string", "minLength": 1},
+        "context": {"type": "string", "minLength": 1}
+      }
+    },
+    "Capture": {
+      "description": "T1: SHA-256 (hex, of the exact UTF-8 text, no normalising) of the verbatim text, and of the companion's note when there is one, taken when the correction was captured. The checker recomputes both. A note_sha256 with no companion_note, or a companion_note with no note_sha256, is invalid.",
+      "type": "object",
+      "required": ["verbatim_sha256"],
+      "properties": {
+        "verbatim_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+        "note_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+      }
+    },
+    "Author": {
+      "description": "R15: who wrote this entry. The human, the companion or the app. Never optional, never stripped by `share`.",
+      "type": "object",
+      "required": ["role"],
+      "properties": {"role": {"type": "string", "enum": ["human", "companion", "app"]}, "id": {"type": "string"}}
+    },
+    "HumanReview": {
+      "description": "R15: whether the human has seen this entry and approved it, stated on every entry. approved needs seen; seen needs a date. An entry a muse wrote and the human never reviewed is a different thing from one the human approved.",
+      "type": "object",
+      "required": ["seen", "approved"],
+      "properties": {
+        "seen": {"type": "boolean"},
+        "approved": {"type": "boolean"},
+        "at": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}"}
+      },
+      "allOf": [
+        {"if": {"required": ["seen"], "properties": {"seen": {"const": true}}}, "then": {"required": ["at"]}},
+        {"if": {"required": ["approved"], "properties": {"approved": {"const": true}}}, "then": {"properties": {"seen": {"const": true}}}}
+      ]
+    },
+    "EmptyByHuman": {
+      "description": "R13: the human says there really are none in this section. Only the human can, and it needs a date. A section that is merely not shown is listed in sections_withheld instead.",
+      "type": "object",
+      "required": ["declared_by", "at"],
+      "properties": {
+        "declared_by": {"const": "human"},
+        "at": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}"}
+      }
+    },
+    "HumanAuthor": {
+      "description": "R10: the author of a human_line. Only a human; the companion or the app cannot write it.",
+      "type": "object",
+      "required": ["role"],
+      "properties": {"role": {"const": "human"}}
+    },
+    "CompanionNote": {
+      "description": "R1: the companion's own reading of a correction, labelled with who wrote it. Never mixed into the memory's `content`, which is the human's words.",
+      "type": "object",
+      "required": ["text", "written_by"],
+      "properties": {
+        "text": {"type": "string", "minLength": 1},
+        "written_by": {
+          "type": "object",
+          "required": ["role"],
+          "properties": {"role": {"type": "string", "enum": ["companion", "app"]}, "id": {"type": "string"}}
+        }
+      }
+    },
+    "SharedCopy": {
+      "description": "Present only in a copy made by `share`: when, and how many memories were removed (never what they were).",
+      "type": "object",
+      "required": ["made_at", "fields_removed"],
+      "properties": {
+        "made_at": {"type": "string", "format": "date-time"},
+        "fields_removed": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

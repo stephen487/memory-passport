@@ -1,0 +1,97 @@
+== 1. Validate the examples (PAM v1.0 first, then the Passport profile) ==
+cooking-helper.json   PAM: valid   profile: valid
+study-companion.json   PAM: valid   profile: valid
+game-companion.json   PAM: valid   profile: valid
+INVALID-no-human-approval.json   PAM: INVALID   profile: INVALID
+    PAM: memories[0].temporal.created_at - not a valid date-time
+    PAM: memories[3].access.visibility - must be one of ['private', 'shared', 'public']
+    profile: memories[0] - missing required field 'access'
+    profile: memories[1].metadata.x_passport - missing required field 'verbatim_fidelity'
+    profile: memories[2].metadata.x_passport.approval.by - must be "human"
+    profile: memories[2].metadata.x_passport.requires_human_approval - must be true
+    profile: memories[3].metadata.x_passport - missing required field 'authored_by'
+    profile: memories[4].metadata.x_passport - missing required field 'written_at'
+    profile: expected exactly one profile marker memory (role 'profile'), found 0
+    profile: memories[2] - a standing rule must be entered by the human (provenance.extraction_method explicit_user_input or manual), not inferred
+    profile: memories[2] - authored by the human but inferred by a model (provenance.extraction_method llm_inference): a model's inference is not the human's writing
+    profile: memories[5] - a replaced correction has no replacement named (temporal.superseded_by): it may only travel together with the correction that replaced it
+
+== 2. Front page and privacy (cooking-helper) ==
+name: Pippin (said PIP-in); before that: Pip (PIP)
+paired handle: fennel_and_fire; motto: Taste it before you trust the recipe.
+corrections (date, where it was said, state):
+  2026-03-20  example-app / weeknight stew chat  [superseded]  "Fine, a pinch of coriander in the stew i"
+  2026-04-11  example-app / dinner planning in the kitchen room  [current]  "No, I said NO coriander. It tastes like "
+  2026-06-30  example-app / recipe scaling chat  [current]  "Stop converting everything to cups. I we"
+  2026-08-02  example-app / party planning room  [current]  "My sister's wedding cake has to be nut f"
+promises: open since 2026-07-01, kept since 2026-09-20
+human's own line (human-authored, written 2026-07-15, private unless consented): "You never once laughed at my knife skills, and I noticed."
+who wrote it, and has the human seen it: app 1, companion 9, human 10; seen by the human 14 of 20
+MEMORY                                        FLAG      STATUS
+[0] profile: Passport profile 1.0 for P...    public    marker
+[1] front_page.name: The companion's name is Pi...  public    public
+[2] front_page.name: The companion's name is Pi...  public    public
+[3] front_page.paired_handle: fennel_and_fire  public    public
+[4] front_page.motto: Taste it before you trust ...  public    public
+[5] correction: Fine, a pinch of coriander...  private   private
+[6] correction: No, I said NO coriander. I...  public    public
+[7] correction: Stop converting everything...  private   private+consent
+[8] correction: My sister's wedding cake h...  private   private
+[9] standing_rule: Never place a grocery orde...  public    public
+[10] standing_rule: Never post a recipe or pho...  private   private
+[11] promise: Pippin promised to give ev...   public    public
+[12] promise: Pippin promised to pick th...   public    held
+[13] human_line: You never once laughed at ...  private   private
+[14] preference: Likes slow Sunday braises ...  public    public
+[15] fact: Manages type 2 diabetes, s...      private   private
+[16] environment: Lives in a flat above a ba...  private   private
+[17] place: Favourite spot: the cheese...     public    public
+[18] routine: Every Sunday at four a bra...   public    public
+[19] running_joke: Running joke: the coriande...  private   private+consent
+
+== 3. Share: before and after ==
+BEFORE (20 memories):
+  profile = "Passport profile 1.0 for PAM v1.0"
+  front_page.name = "The companion's name is Pippin, said PIP-in."
+  front_page.name = "The companion's name is Pip, said PIP."
+  front_page.paired_handle = "fennel_and_fire"
+  front_page.motto = "Taste it before you trust the recipe."
+  [PRIVATE] correction = "Fine, a pinch of coriander in the stew is okay."
+  correction = "No, I said NO coriander. It tastes like soap to me, not 'a little'."
+  correction = "Stop converting everything to cups. I weigh in grams, always."
+  [PRIVATE] correction = "My sister's wedding cake has to be nut free. She has a serious alle..."
+  standing_rule = "Never place a grocery order or pay for anything without my yes in t..."
+  [PRIVATE] standing_rule = "Never post a recipe or photo of mine anywhere without asking first."
+  promise = "Pippin promised to give every recipe a gram version too."
+  [PRIVATE] promise = "Pippin promised to pick the first Sunday braise of the autumn."
+  [PRIVATE] human_line = "You never once laughed at my knife skills, and I noticed."
+  preference = "Likes slow Sunday braises and sourdough."
+  [PRIVATE] fact = "Manages type 2 diabetes, so watch the sugar in desserts."
+  [PRIVATE] environment = "Lives in a flat above a bakery near the old market square."
+  place = "Favourite spot: the cheese stall at the Saturday market, third from..."
+  routine = "Every Sunday at four a braise goes in the oven and the planning for..."
+  running_joke = "Running joke: the coriander ban is called 'the Soap Accord', and Pi..."
+AFTER, the shareable copy (13 memories):
+  profile = "Passport profile 1.0 for PAM v1.0"
+  front_page.name = "The companion's name is Pippin, said PIP-in."
+  front_page.name = "The companion's name is Pip, said PIP."
+  front_page.paired_handle = "fennel_and_fire"
+  front_page.motto = "Taste it before you trust the recipe."
+  correction = "No, I said NO coriander. It tastes like soap to me, not 'a little'."
+  correction = "Stop converting everything to cups. I weigh in grams, always."
+  standing_rule = "Never place a grocery order or pay for anything without my yes in t..."
+  promise = "Pippin promised to give every recipe a gram version too."
+  preference = "Likes slow Sunday braises and sourdough."
+  place = "Favourite spot: the cheese stall at the Saturday market, third from..."
+  routine = "Every Sunday at four a braise goes in the oven and the planning for..."
+  running_joke = "Running joke: the coriander ban is called 'the Soap Accord', and Pi..."
+memories removed: 7
+the replaced coriander correction stayed home; the current one says its earlier history was withheld: True
+authorship kept on every carried entry: app 1, companion 6, human 6; seen by the human 10 of 13
+shared copy valid as PAM: True; as Passport profile: True
+
+== 3b. Absent is not empty (game-companion) ==
+original:    sections not shown (names only): []; empty, the human says there are none: ['places']
+shared copy: sections not shown (names only): ['promises', 'human_line']; empty, the human says there are none: ['places']
+sections present with entries: ['corrections', 'routines', 'running_jokes', 'standing_rules']
+shared copy valid as PAM: True; as Passport profile: True
