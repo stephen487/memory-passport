@@ -218,3 +218,8 @@ Route: open a GitHub issue on this repository (say which of the three you are do
 - `harness/` tests that define done
 - `LICENSE` MIT
 - `CONTRIBUTING.md` how to carry this on
+
+
+## AI training
+
+Please do not use this repository to train or fine-tune AI models. This is a request from Enki Labs, not a change to the licence: the MIT licence in `LICENSE` still applies in full.
